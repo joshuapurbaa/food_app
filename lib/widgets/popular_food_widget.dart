@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/models_and_styles/model.dart';
-import 'package:food_app/models_and_styles/styles.dart';
-import 'package:food_app/screens/food_detail.dart';
+import 'package:food_app/models/model.dart';
+import 'package:food_app/theme/styles.dart';
+import 'package:food_app/screens/food_detail_screen.dart';
 
-class PopularWidget extends StatelessWidget {
+class PopularFoodWidget extends StatelessWidget {
+  const PopularFoodWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-          padding: EdgeInsets.only(top: 10.0, bottom: 15.0),
+          padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
           itemCount: populars.length,
           itemBuilder: (BuildContext context, int index) {
             PopularFood popFood = populars[index];
@@ -18,11 +20,11 @@ class PopularWidget extends StatelessWidget {
                   onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (_) => FoodDetail(
+                          builder: (_) => FoodDetailScreen(
                                 popFood: popFood,
                               ))),
                   child: Container(
-                    margin: EdgeInsets.symmetric(
+                    margin: const EdgeInsets.symmetric(
                         horizontal: kDefaultPadding, vertical: 10.0),
                     height: 120.0,
                     width: double.infinity,
@@ -32,7 +34,8 @@ class PopularWidget extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          margin: EdgeInsets.only(left: 20.0, right: 18.0),
+                          margin:
+                              const EdgeInsets.only(left: 20.0, right: 18.0),
                           width: 68,
                           child: Image(image: AssetImage(popFood.imageUrl)),
                         ),
@@ -48,7 +51,7 @@ class PopularWidget extends StatelessWidget {
                               popFood.description,
                               style: grey12,
                             ),
-                            SizedBox(height: 7.0),
+                            const SizedBox(height: 7.0),
                             Text(
                               popFood.price,
                               style: blackText14w600,
@@ -68,7 +71,7 @@ class PopularWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: greenColor,
                         borderRadius: BorderRadius.circular(18.0)),
-                    child: Icon(
+                    child: const Icon(
                       Icons.add,
                       color: Colors.white,
                       size: 16.0,

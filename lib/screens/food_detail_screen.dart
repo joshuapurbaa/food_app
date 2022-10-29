@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:food_app/models_and_styles/model.dart';
-import 'package:food_app/models_and_styles/styles.dart';
-import 'package:food_app/widgets/quantity_button.dart';
-import 'package:food_app/widgets/size_icon.dart';
+import 'package:food_app/models/model.dart';
+import 'package:food_app/theme/styles.dart';
 
-class FoodDetail extends StatefulWidget {
+import '../widgets/widgets.dart';
+
+class FoodDetailScreen extends StatefulWidget {
   final PopularFood popFood;
 
-  FoodDetail({this.popFood});
+  const FoodDetailScreen({required this.popFood});
   @override
-  _FoodDetailState createState() => _FoodDetailState();
+  _FoodDetailScreenState createState() => _FoodDetailScreenState();
 }
 
-class _FoodDetailState extends State<FoodDetail> {
+class _FoodDetailScreenState extends State<FoodDetailScreen> {
   int quantity = 0;
   bool minusClick = false;
   bool addClick = false;
@@ -28,22 +28,22 @@ class _FoodDetailState extends State<FoodDetail> {
       body: ListView(
         children: [
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
+            padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [                                                                                               
+              children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 20.0, bottom: 25.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                          icon: Icon(FontAwesomeIcons.chevronLeft),
+                          icon: const Icon(FontAwesomeIcons.chevronLeft),
                           onPressed: () {
                             Navigator.pop(context);
-                          }), 
+                          }),
                       IconButton(
-                          icon: Icon(FontAwesomeIcons.ellipsisV),
+                          icon: const Icon(FontAwesomeIcons.ellipsisV),
                           onPressed: () {}),
                     ],
                   ),
@@ -51,22 +51,22 @@ class _FoodDetailState extends State<FoodDetail> {
                 Column(
                   children: [
                     Text('Steak House', style: titleText),
-                    SizedBox(height: 4.0),
+                    const SizedBox(height: 4.0),
                     Text('Our very own! Smashed\nbeef burgers', style: grey16),
                   ],
                 ),
-                SizedBox(height: 50.0),
-                Image(image: AssetImage('assets/images/humburger1.png')),
-                SizedBox(height: 50.0),
+                const SizedBox(height: 50.0),
+                const Image(image: AssetImage('assets/images/humburger1.png')),
+                const SizedBox(height: 50.0),
                 Text('Size', style: blackText14),
-                SizedBox(height: 4.0),
-                SizeIcon(),
-                SizedBox(height: 30.0),
+                const SizedBox(height: 4.0),
+                const SizeIconWidget(),
+                const SizedBox(height: 30.0),
                 Text('Quantity', style: blackText14),
-                SizedBox(height: 4.0),
+                const SizedBox(height: 4.0),
                 Row(
                   children: [
-                    QuantityButton(
+                    QuantityButtonWidget(
                       backgroundColor: minusClick ? greenColor : whiteColor,
                       iconColor: minusClick ? whiteColor : blackColor,
                       icon: FontAwesomeIcons.minus,
@@ -83,7 +83,7 @@ class _FoodDetailState extends State<FoodDetail> {
                       width: 30.0,
                       child: Text(quantity.toString()),
                     ),
-                    QuantityButton(
+                    QuantityButtonWidget(
                       backgroundColor: addClick ? greenColor : whiteColor,
                       iconColor: addClick ? whiteColor : blackColor,
                       icon: FontAwesomeIcons.plus,
@@ -97,7 +97,7 @@ class _FoodDetailState extends State<FoodDetail> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -107,7 +107,7 @@ class _FoodDetailState extends State<FoodDetail> {
                         Text('Price',
                             style:
                                 grey14.copyWith(fontWeight: FontWeight.w500)),
-                        SizedBox(height: 9.0),
+                        const SizedBox(height: 9.0),
                         Text('IDR 59.999', style: blackText20),
                       ],
                     ),
@@ -132,7 +132,7 @@ class _FoodDetailState extends State<FoodDetail> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 20.0),
+                        const SizedBox(width: 20.0),
                         GestureDetector(
                           onTap: () {
                             setState(() {
@@ -156,7 +156,7 @@ class _FoodDetailState extends State<FoodDetail> {
                     ),
                   ],
                 ),
-                SizedBox(height: 20.0)
+                const SizedBox(height: 20.0)
               ],
             ),
           )

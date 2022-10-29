@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:food_app/models_and_styles/styles.dart';
+import 'package:food_app/theme/styles.dart';
 
 class CustomBottomNavBar extends StatefulWidget {
   @override
@@ -8,38 +8,39 @@ class CustomBottomNavBar extends StatefulWidget {
 }
 
 enum BottomIcons {
-  Home,
-  Notification,
-  Favorite,
-  Account,
+  home,
+  notification,
+  favorite,
+  account,
 }
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
-  BottomIcons bottomIcons = BottomIcons.Home;
+  BottomIcons bottomIcons = BottomIcons.home;
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Container(
-          padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 15.0),
+          padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 15.0),
           decoration: BoxDecoration(
               color: silverColor,
-              borderRadius: BorderRadius.vertical(top: Radius.circular(27.0))),
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(27.0))),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
                   onTap: () {
                     setState(() {
-                      bottomIcons = BottomIcons.Home;
+                      bottomIcons = BottomIcons.home;
                     });
                   },
-                  child: bottomIcons == BottomIcons.Home
+                  child: bottomIcons == BottomIcons.home
                       ? Container(
                           decoration: BoxDecoration(
                               color: greenColor,
                               borderRadius: BorderRadius.circular(30.0)),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 8.0),
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
@@ -48,7 +49,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                                 FontAwesomeIcons.home,
                                 color: whiteColor,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 12.0,
                               ),
                               Text(
@@ -58,19 +59,19 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                             ],
                           ),
                         )
-                      : Icon(FontAwesomeIcons.home)),
+                      : const Icon(FontAwesomeIcons.home)),
               GestureDetector(
                   onTap: () {
                     setState(() {
-                      bottomIcons = BottomIcons.Notification;
+                      bottomIcons = BottomIcons.notification;
                     });
                   },
-                  child: bottomIcons == BottomIcons.Notification
+                  child: bottomIcons == BottomIcons.notification
                       ? Container(
                           decoration: BoxDecoration(
                               color: greenColor,
                               borderRadius: BorderRadius.circular(30.0)),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 8.0),
                           child: Row(
                             children: [
@@ -78,7 +79,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                                 FontAwesomeIcons.bell,
                                 color: whiteColor,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8.0,
                               ),
                               Text(
@@ -88,19 +89,19 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                             ],
                           ),
                         )
-                      : Icon(FontAwesomeIcons.bell)),
+                      : const Icon(FontAwesomeIcons.bell)),
               GestureDetector(
                   onTap: () {
                     setState(() {
-                      bottomIcons = BottomIcons.Favorite;
+                      bottomIcons = BottomIcons.favorite;
                     });
                   },
-                  child: bottomIcons == BottomIcons.Favorite
+                  child: bottomIcons == BottomIcons.favorite
                       ? Container(
                           decoration: BoxDecoration(
                               color: greenColor,
                               borderRadius: BorderRadius.circular(30.0)),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 8.0),
                           child: Row(
                             children: [
@@ -108,7 +109,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                                 FontAwesomeIcons.heart,
                                 color: whiteColor,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8.0,
                               ),
                               Text(
@@ -118,19 +119,19 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                             ],
                           ),
                         )
-                      : Icon(FontAwesomeIcons.heart)),
+                      : const Icon(FontAwesomeIcons.heart)),
               GestureDetector(
                   onTap: () {
                     setState(() {
-                      bottomIcons = BottomIcons.Account;
+                      bottomIcons = BottomIcons.account;
                     });
                   },
-                  child: bottomIcons == BottomIcons.Account
+                  child: bottomIcons == BottomIcons.account
                       ? Container(
                           decoration: BoxDecoration(
                               color: greenColor,
                               borderRadius: BorderRadius.circular(30.0)),
-                          padding: EdgeInsets.symmetric(
+                          padding: const EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 8.0),
                           child: Row(
                             children: [
@@ -138,7 +139,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                                 FontAwesomeIcons.user,
                                 color: whiteColor,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8.0,
                               ),
                               Text(
@@ -148,7 +149,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                             ],
                           ),
                         )
-                      : Icon(FontAwesomeIcons.user)),
+                      : const Icon(FontAwesomeIcons.user)),
             ],
           ),
         )

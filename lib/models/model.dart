@@ -4,7 +4,12 @@ class PopularFood {
   String description;
   String price;
 
-  PopularFood({this.imageUrl, this.foodName, this.description, this.price});
+  PopularFood({
+    required this.imageUrl,
+    required this.foodName,
+    required this.description,
+    required this.price,
+  });
 }
 
 final List<PopularFood> populars = [

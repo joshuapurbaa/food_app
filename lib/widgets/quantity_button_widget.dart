@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
-class QuantityButton extends StatelessWidget {
-  QuantityButton(
-      {this.icon, this.onPressed, this.backgroundColor, this.iconColor});
+class QuantityButtonWidget extends StatelessWidget {
+  QuantityButtonWidget({
+    required this.icon,
+    required this.onPressed,
+    required this.backgroundColor,
+    required this.iconColor,
+  });
   final IconData icon;
-  final Function onPressed;
+  final Function() onPressed;
   final Color backgroundColor;
   final Color iconColor;
   @override

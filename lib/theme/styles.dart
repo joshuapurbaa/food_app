@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-Color silverColor = Color(0xFFF6F7FB);
-Color lightGreyColor = Color(0xFFA4A4A4);
-Color greyColor = Color(0xFFBABABA);
-Color blackColor = Color(0xFF111111);
-Color whiteColor = Color(0xFFFFFFFF);
-Color greenColor = Color(0xFF11AC6A);
+Color silverColor = const Color(0xFFF6F7FB);
+Color lightGreyColor = const Color(0xFFA4A4A4);
+Color greyColor = const Color(0xFFBABABA);
+Color blackColor = const Color(0xFF111111);
+Color whiteColor = const Color(0xFFFFFFFF);
+Color greenColor = const Color(0xFF11AC6A);
 
 const kDefaultPadding = 30.0;
 

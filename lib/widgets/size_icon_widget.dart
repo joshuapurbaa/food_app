@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/models_and_styles/styles.dart';
+import 'package:food_app/theme/styles.dart';
 
-class SizeIcon extends StatefulWidget {
+class SizeIconWidget extends StatefulWidget {
+  const SizeIconWidget({super.key});
+
   @override
-  _SizeIconState createState() => _SizeIconState();
+  _SizeIconWidgetState createState() => _SizeIconWidgetState();
 }
 
-class _SizeIconState extends State<SizeIcon> {
+class _SizeIconWidgetState extends State<SizeIconWidget> {
   int _selectedIndex = 0;
 
-  List<String> _size = ['S', 'M', 'L'];
+  final List<String> _size = ['S', 'M', 'L'];
 
   Widget _buildSizeIcon(int index) {
     return GestureDetector(
@@ -28,15 +30,15 @@ class _SizeIconState extends State<SizeIcon> {
         ),
         child: Text(_size[index],
             style: _selectedIndex == index
-                ? TextStyle(color: Colors.white, fontSize: 24.0)
-                : TextStyle(color: Colors.black, fontSize: 24.0)),
+                ? const TextStyle(color: Colors.white, fontSize: 24.0)
+                : const TextStyle(color: Colors.black, fontSize: 24.0)),
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 220.0,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
