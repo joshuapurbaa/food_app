@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:food_app/models/model.dart';
-import 'package:food_app/theme/styles.dart';
+import 'package:food_app/models/food_model.dart';
+import 'package:food_app/res/styles.dart';
 
 import '../widgets/widgets.dart';
 

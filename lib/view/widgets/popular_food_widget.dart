@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/models/model.dart';
-import 'package:food_app/theme/styles.dart';
-import 'package:food_app/screens/food_detail_screen.dart';
+import 'package:food_app/models/food_model.dart';
+import 'package:food_app/res/styles.dart';
+import 'package:food_app/view/screens/food_detail_screen.dart';
+
+import '../../models/data/food_data.dart';
 
 class PopularFoodWidget extends StatelessWidget {
   const PopularFoodWidget({super.key});
@@ -13,7 +15,7 @@ class PopularFoodWidget extends StatelessWidget {
           padding: const EdgeInsets.only(top: 10.0, bottom: 15.0),
           itemCount: populars.length,
           itemBuilder: (BuildContext context, int index) {
-            PopularFood popFood = populars[index];
+            final PopularFood popFood = populars[index];
             return Stack(
               children: [
                 GestureDetector(
@@ -29,15 +31,22 @@ class PopularFoodWidget extends StatelessWidget {
                     height: 120.0,
                     width: double.infinity,
                     decoration: BoxDecoration(
-                        color: silverColor,
-                        borderRadius: BorderRadius.circular(12.0)),
+                      color: silverColor,
+                      borderRadius: BorderRadius.circular(12.0),
+                    ),
                     child: Row(
                       children: [
-                        Container(
-                          margin:
-                              const EdgeInsets.only(left: 20.0, right: 18.0),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Image.asset(
+                          popFood.imageUrl,
                           width: 68,
-                          child: Image(image: AssetImage(popFood.imageUrl)),
+                          cacheWidth: 178,
+                          cacheHeight: 183,
+                        ),
+                        const SizedBox(
+                          width: 18,
                         ),
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -69,8 +78,9 @@ class PopularFoodWidget extends StatelessWidget {
                     height: 36.0,
                     width: 36.0,
                     decoration: BoxDecoration(
-                        color: greenColor,
-                        borderRadius: BorderRadius.circular(18.0)),
+                      color: greenColor,
+                      shape: BoxShape.circle,
+                    ),
                     child: const Icon(
                       Icons.add,
                       color: Colors.white,

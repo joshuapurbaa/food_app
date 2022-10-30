@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_app/theme/styles.dart';
+import 'package:food_app/res/styles.dart';
 
 class SizeIconWidget extends StatefulWidget {
   const SizeIconWidget({super.key});
