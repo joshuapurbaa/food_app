@@ -20,11 +20,13 @@ class PopularFoodWidget extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (_) => FoodDetailScreen(
-                                popFood: popFood,
-                              ))),
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => FoodDetailScreen(
+                        popFood: popFood,
+                      ),
+                    ),
+                  ),
                   child: Container(
                     margin: const EdgeInsets.symmetric(
                         horizontal: kDefaultPadding, vertical: 10.0),

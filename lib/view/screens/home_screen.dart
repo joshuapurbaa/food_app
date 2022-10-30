@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:food_app/res/styles.dart';
 
 import '../widgets/widgets.dart';
@@ -13,7 +14,11 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const HeaderWidget(),
+              HeaderWidget(
+                leftIcon: FontAwesomeIcons.bars,
+                rightIcon: FontAwesomeIcons.shoppingBasket,
+                onPressed: () {},
+              ),
               const TextFieldWidget(),
               const SizedBox(height: 30.0),
               CategoryMenuWidget(),

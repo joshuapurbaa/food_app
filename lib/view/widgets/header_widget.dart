@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HeaderWidget extends StatelessWidget {
-  const HeaderWidget({
-    Key? key,
-  }) : super(key: key);
+  const HeaderWidget(
+      {Key? key,
+      required this.leftIcon,
+      required this.rightIcon,
+      required this.onPressed})
+      : super(key: key);
+
+  final IconData leftIcon;
+  final IconData rightIcon;
+  final Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +20,11 @@ class HeaderWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           IconButton(
-            icon: const Icon(FontAwesomeIcons.bars),
-            onPressed: () {},
+            icon: Icon(leftIcon),
+            onPressed: onPressed,
           ),
           IconButton(
-            icon: const Icon(FontAwesomeIcons.shoppingBasket),
+            icon: Icon(rightIcon),
             onPressed: () {},
           ),
         ],

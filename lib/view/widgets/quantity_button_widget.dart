@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class QuantityButtonWidget extends StatelessWidget {
-  QuantityButtonWidget({
+  const QuantityButtonWidget({
+    super.key,
     required this.icon,
     required this.onPressed,
     required this.backgroundColor,
@@ -14,18 +15,18 @@ class QuantityButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
+      onPressed: onPressed,
+      constraints: const BoxConstraints.tightFor(
+        width: 35.0,
+        height: 35.0,
+      ),
+      shape: const CircleBorder(),
+      fillColor: backgroundColor,
       child: Icon(
         icon,
         size: 12.0,
         color: iconColor,
       ),
-      onPressed: onPressed,
-      constraints: BoxConstraints.tightFor(
-        width: 35.0,
-        height: 35.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: backgroundColor,
     );
   }
 }
